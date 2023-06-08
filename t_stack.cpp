@@ -29,4 +29,55 @@ using namespace std;
             cout<<"Popped "<<pop<<" from the stack. "<<endl;
         }
     }
+    void showI(){
+        cout<<"Stack : "<<endl;
+        for (int i = tos; i>0;i--){
+           cout<<stackI[i]; 
+        }
+    }
+    void revStack(){
+        for (int i = 0; i<tos; i++){
+            for (int j = tos; j>0; j--){
+                stackI[i]=stackJ[j];
+            }
+        }
+    }
+    void showJ(){
+        cout<<"Reversed Stack : "<<endl;
+        for(int k=tos;k<0;k--){
+            cout<<stackJ[k];
+        }
+    }
  };
+ int main(){
+    stackW myStack;
+    int en;
+    cout<<"Press 1 to push\nPress 2 to pop\nPress 3 to view the stack\nPress 4 to reverse the stack\nPress 5 to display reversed stack\nPress 6 to exit"<<endl;
+    cin>>en;
+    while (true){
+
+    switch (en)
+    {
+    case 1:
+        myStack.pushI();
+        break;
+    case 2:
+        myStack.popI();
+        break;
+    case 3:
+        myStack.showI();
+        break;
+    case 4:
+        myStack.revStack();
+        break;
+    case 5: 
+        myStack.showJ();
+        break;
+    case 6:
+        exit(1);
+    default:
+        cout<<"Invalid input. Try again. "<<endl;
+        break;
+    }
+ }
+ }
