@@ -32,7 +32,7 @@ using namespace std;
     void showI(){
         cout<<"Stack : "<<endl;
         for (int i = tos; i>0;i--){
-           cout<<stackI[i]; 
+           cout<<stackI[i]<<endl;; 
         }
     }
     void revStack(){
@@ -45,19 +45,17 @@ using namespace std;
     void showJ(){
         cout<<"Reversed Stack : "<<endl;
         for(int k=tos;k<0;k--){
-            cout<<stackJ[k];
+            cout<<stackJ[k]<<endl;
         }
     }
  };
  int main(){
     stackW myStack;
     int en;
+    while(true){
     cout<<"Press 1 to push\nPress 2 to pop\nPress 3 to view the stack\nPress 4 to reverse the stack\nPress 5 to display reversed stack\nPress 6 to exit"<<endl;
     cin>>en;
-    while (true){
-
-    switch (en)
-    {
+    switch (en){
     case 1:
         myStack.pushI();
         break;
