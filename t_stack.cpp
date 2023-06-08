@@ -1,65 +1,32 @@
-//Stack for strings 
 #include <iostream>
 #include <cstring>
 using namespace std;
-class stack{
+ 
+ class stackW{
     private:
-    string stack[5];
-    int tos =  -1;
-    string data;
-    string popEle;
+    int stackI[5];
+    int stackJ[5];
+    int data;
+    int tos = -1;
+    int pop;
     public:
-    void push(){
-        if(tos == 4){
-            cout<<"Stack if full!! Stack overflow."<<endl;
+    void pushI(){
+        if(tos==5-1){
+            cout<<"Stack is full. "<<endl;
         }
         else{
-            cout<<"Enter the string to push : ";
+            cout<<"Enter the element to push onto first stack : ";
             cin>>data;
-            stack[tos++]=data;
-            cout<<"String "<<data<<" pushed onto the stack. "<<endl;
-        }
+            stackI[++tos]=data;
+            }
     }
-    void pop(){
+    void popI(){
         if(tos==-1){
-            cout<<"Stack is empty!! Stack underflow."<<endl;
+            cout<<"Stack empty. "<<endl;
         }
         else{
-        popEle = stack[tos--];
-        cout<<"String "<<popEle<<" popped from the stack.";
+            int pop=stackI[tos--];
+            cout<<"Popped "<<pop<<" from the stack. "<<endl;
         }
     }
-    void show(){
-        cout<<"Stack : \n";
-        for (int i = tos; i>tos; i--){
-            cout<<stack[i]<<" "<<endl;
-        }
-    }
-};
-int main(){
-    stack mystack;
-    int ch;
-    while(true){
-        cout<<"Press 1 to push, 2 to pop, 3 to display the stack, and 4 to exit: ";
-        cin >> ch;
-        
-        switch (ch){
-            case 1:
-                mystack.push();
-                break;
-            case 2:
-                mystack.pop();
-                break;
-            case 3: 
-                mystack.show();
-                break;
-            case 4:
-                exit(1);
-            default:
-                cout<<"Invalid choice. Please try again."<<endl;
-                break;
-        }
-    }
-    
-    return 0;
-}
+ };
